@@ -2,9 +2,12 @@ package ar.edu.ies6.model;
 import java.time.LocalDate;
 import java.time.Period;
 
+import org.springframework.stereotype.Component;
+
 import ar.edu.ies6.util.Carrera;
 import ar.edu.ies6.util.Curso;
 
+@Component
 public class Alumno {
     private String dni;
     private String apellido;
