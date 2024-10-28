@@ -30,13 +30,15 @@ public class Materia {
     @Column
     private LocalDate fechaDeInicio ;
     @Id 
-    private String codigo ;
+    private Integer codigo ;
     @Column(name="estado")
     private Boolean estado;
 
+public Materia (){
 
+}
 
-    public Materia (String nombre,String docenteACargo,String curso,String dificultad,String enfoque,String duracion,String tipoDeCursada,LocalDate fechaDeInicio,String codigo,Boolean estado){
+    public Materia (String nombre,String docenteACargo,String curso,String dificultad,String enfoque,String duracion,String tipoDeCursada,LocalDate fechaDeInicio,Integer codigo,Boolean estado){
         this.nombre=nombre;
         this.docenteACargo=docenteACargo;
         this.curso=curso;
@@ -116,11 +118,11 @@ public void setFechaDeInicio(LocalDate fechaDeInicio) {
     this.fechaDeInicio = fechaDeInicio;
 }
 
-public String getCodigo() {
+public Integer getCodigo() {
     return codigo;
 }
 
-public void setCodigo(String codigo) {
+public void setCodigo(Integer codigo) {
     this.codigo = codigo;
 }
 
