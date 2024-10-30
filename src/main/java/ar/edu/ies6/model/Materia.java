@@ -37,6 +37,7 @@ public class Materia {
 			return calificacion;
 		}
 		
+		
 		public void setCalificacion (int calificacion) {
 			this.calificacion = calificacion;
 		}
