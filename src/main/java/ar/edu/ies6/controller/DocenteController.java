@@ -2,9 +2,11 @@ package ar.edu.ies6.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.ies6.model.Docente;
+import ar.edu.ies6.service.imp.DocenteServiceImp;
 
 @Controller
 public class DocenteController {
@@ -27,6 +29,16 @@ public class DocenteController {
 		ModelAndView transportador = new ModelAndView("indexDocente");
 		transportador.addObject("docente", unDocente);
         
+		return transportador;
+	}
+	@PostMapping
+	public ModelAndView guardarDocente(Docente docente) {
+		
+		DocenteServiceImp docenteService = new  DocenteServiceImp();
+		docenteService.guardarDocente(docente);
+		
+		ModelAndView transportador = new ModelAndView("avisoExito");
+		//transportador.addObject("docente", unDocente);
 		return transportador;
 	}
 }
