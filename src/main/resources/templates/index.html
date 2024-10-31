@@ -48,6 +48,7 @@
 				</div>
 			</nav>
 		</header>
+		<img src="/imagenes/imagen01.jpg"
 		<h1>Instituto de Educación Superior N° 6</h1>
 		<h2>Base de datos: Alumnos</h2>
 		<form data-th-objects="${alumno}">
@@ -79,6 +80,9 @@
 				<div class="col-4">
 					<label>Curso:</label> <input type="text"
 						data-th-field="${alumno.curso}" />
+				</div>
+				<div class="col-4">
+					<input type="submit" value="Guardar Alumno"/>		
 				</div>
 			</div>
 		</form>

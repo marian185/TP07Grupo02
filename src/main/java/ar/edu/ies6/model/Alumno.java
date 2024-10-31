@@ -6,15 +6,27 @@ import org.springframework.stereotype.Component;
 
 import ar.edu.ies6.util.Carrera;
 import ar.edu.ies6.util.Curso;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Component
+@Entity
+
 public class Alumno {
+	@Id
     private String dni;
+	@Column
     private String apellido;
+	@Column
     private String nombre;
+	@Column
     private LocalDate fechaNacimiento;
+	@Column
     private String domicilio;
+	@Column
     private Carrera carrera;
+	@Column
     private Curso curso;
  
     //constructor por defecto
