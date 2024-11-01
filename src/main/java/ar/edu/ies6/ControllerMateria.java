@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class ControllerMateria {
     @Autowired
-    private MateriaRepository MateriaRepository;
+    private MateriaRepository materiaRepository;
     @GetMapping("/inicio") 
     public String mostrarInicio (){
         return "index";
@@ -32,12 +32,16 @@ public class ControllerMateria {
 
     @PostMapping("/guardarMateria")
     public String guardarMateria(@ModelAttribute Materia materia,Model model ) {
-        MateriaRepository.save(materia);
+        materiaRepository.save(materia);
         
         return "redirect:/inicio";
     }
     
     
 
-
+    @GetMapping("/materias")
+    public String listaMateria (Model model){
+ model.addAttribute("materias", materiaRepository.findAll());
+        return "listaMateria";
+    }
 }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ies6</title>
+</head>
+
+<body>
+    <header>
+
+        <nav>
+
+            <a href="/inicio">inicio</a>
+            <a href="/formulario">formulario</a>
+            <a href="/materias">lista de materia</a>
+        </nav>
+    </header>
+    <main>
+    <h1>lista de materia</h1>
+    <tablet border="1">
+<thead>
+<tr>
+<th>nombre</th>
+<th>docente a cargo</th>
+<th>curso</th>
+<th>dificultad</th>
+<th>enfoque</th>
+<th>duracion</th>
+<th>tipo de cursada</th>
+<th>fecha de inicio</th>
+<th>codigos</th>
+<th>acciones</th>
+
+
+
+</tr>
+
+
+
+</thead>
+
+<tbody>
+<tr  th:each="materia : ${materias}">
+<td th:text="${materia.nombre}"></td>
+<td th:text="${materia.docenteACargo}"></td>
+<td th:text="${materia.curso}"></td>
+<td th:text="${materia.dificultad}"></td>
+<td th:text="${materia.enfoque}"></td>
+<td th:text="${materia.duracion}"></td>
+<td th:text="${materia.tipoDeCursada}"></td>
+<td th:text="${materia.fechaDeInicio}"></td>
+<td th:text="${materia.codigo}"></td>
+<td>
+   <button>modificar</button>
+<button>eliminar</button>
+</td>
+</tr>
+
+
+
+</tbody>
+
+
+    </tablet>
+    
+
+    
+</main>
+    <footer>
+
+        <p>mail:tolabacarolina19@gmail.com</p>
+    </footer>
+</body>
+
+</html>
