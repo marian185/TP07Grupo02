@@ -5,10 +5,19 @@ import java.time.Period;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+
 @Component
+@Entity
 public class Docente {
+		@Id
 	    private double dni;
+		@Column
 	    private String apellido;
+		@Column
 	    private String nombre;
 	    private LocalDate fechaNacimiento;
 	    private String domicilio;

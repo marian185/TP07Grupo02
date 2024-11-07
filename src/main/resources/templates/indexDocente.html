@@ -50,25 +50,27 @@
 		</header>
 	<h1>Carga de Docentes</h1>
 		<p>esto es una prueba de un parrafo 01</p>
-			<from data-th-object="${docente}">
+			<form data-th-object="${docente}" th:action="@{/guardarDocente}"method="post">
 			<div class="row">
 				<div class="col">
-					<label>DNI</label> <input type="text"
-						data-th-field="${docente.dni}"></input>
+					<label>DNI</label>
+					 <input type="text" name="dni" data-th-field="${docente.dni}" class="form-control">
+					<!--  <input type="text"data-th-field="${docente.dni}"></input>  -->
 				</div>
 				<div class="col">
-					<label>Nombre</label> <input type="text"
-						data-th-field="${docente.nombre}"></input>
+					<label>Nombre</label> 
+					<input type="text" name="nombre" data-th-field="${docente.nombre}" class="form-control">
+					<!-- <input type="text"data-th-field="${docente.nombre}"></input>  -->
 				</div>
 				<div class="col">
-					<label>Apellido</label> <input type="text"
-						data-th-field="${docente.apellido}"></input>
+					<label>Apellido</label> 
+					<input type="text" name="apellido" data-th-field="${docente.apellido}" class="form-control">
 				</div>
 				<div class="col">
-					<input type="submit" value="Guardar Docente"/>
+					<input type="submit" value="Guardar Docente" class="btn btn-primary mt-4">
 				</div>
 			</div>
-			</from>
+			</form>
 			</div>
 				<!-- se centra a la pantalla los texto-->
 				<script

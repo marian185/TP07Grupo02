@@ -7,5 +7,5 @@ import ar.edu.ies6.model.Docente;
 
 public class AlmacenDocentes {
 	public static List<Docente> docentes = new ArrayList<Docente>();
-
+	
 }
