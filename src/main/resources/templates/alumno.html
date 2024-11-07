@@ -73,23 +73,20 @@
 						data-th-field="${alumno.domicilio}" />
 				</div>
 				<div class="col">
-					<label class="form-label" for="carrera">Carrera</label> 
-					<Select data-th-field="${alumno.carrera}" class="form-control" required>
-					   <option data-th-value="PROFESORADO_DE_INFORMATICA">PROF. DE INFORMATICA</option>
-					   <option data-th-value="PROFESORADO_DE_INGLES">PROF. DE INGLÉS</option>
-					   <option data-th-value="PROFESORADO_DE_MATEMATICAS">PROF. DE MATEMÁTICAS</option>
-					   <option data-th-value="TECNICATURA_EN_ADMINISTRACION">TEC. EN ADMINISTRACIÓN</option>
+					<label for="carr">Carrera</label> 
+					<Select id= "carr" data-th-field="${alumno.carrera}">
+					   <option data-th-each="c : ${T(ar.edu.ies6.util.Carrera).values() }"
+					   data-th-value="${c}" data-th-text="${c}"></option>
 					</Select>
 						
 				</div>
 				<div class="col">
-					<label class="form-label" for="curso">Curso</label> 
-					<Select data-th-field="${alumno.curso}" class="form-control" required>
-					   <option data-th-value="PRIMER_AÑO">1 AÑO</option>
-					   <option data-th-value="SEGUNDO_AÑO">2 AÑO</option>
-					   <option data-th-value="TERCER_AÑO">3 AÑO</option>
-					   <option data-th-value="CUARTO_AÑO">4 AÑO</option>
+				<label for="cur">Curso</label> 
+					<Select id= "cur" data-th-field="${alumno.curso}">
+					   <option data-th-each="cur : ${T(ar.edu.ies6.util.Curso).values() }"
+					   data-th-value="${cur}" data-th-text="${cur}"></option>
 					</Select>
+		
 						
 				</div>
 				

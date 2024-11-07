@@ -8,6 +8,8 @@ import ar.edu.ies6.util.Carrera;
 import ar.edu.ies6.util.Curso;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 
 @Component
@@ -25,8 +27,10 @@ public class Alumno {
 	@Column
     private String domicilio;
 	@Column
+	@Enumerated(EnumType.STRING)
     private Carrera carrera;
 	@Column
+	@Enumerated(EnumType.STRING)
     private Curso curso;
  
     //constructor por defecto
