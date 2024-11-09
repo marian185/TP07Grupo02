@@ -19,6 +19,8 @@ public class Docente {
 	    private String apellido;
 		@Column
 	    private String nombre;
+		@Column
+		private Boolean estado;
 	    private LocalDate fechaNacimiento;
 	    private String domicilio;
 	    private String especialidad;
@@ -37,6 +39,12 @@ public Docente(double dni, String apellido, String nombre, LocalDate fechaNacimi
 			this.legajo = legajo;
 		}
 
+		public Boolean getEstado() {
+			return estado;
+		}
+		public void setEstado(Boolean estado) {
+			this.estado = estado;
+		}
 		public double getDni() {
 			return dni;
 		}

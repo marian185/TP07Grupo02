@@ -14,4 +14,5 @@ public interface IDocenteService {
 	public void modificarDocente(Docente docenteModificado);
 	public Docente consultarDocente(double dni);
 	public List<Docente>listarTodosDocente();
+	public List<Docente>listarTodosDocentesActivos();
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -41,6 +42,16 @@ public class DocenteController {
         
 		return transportador;
 	}
+	
+	
+	@GetMapping("/listadoDocente")
+	public ModelAndView getAllDocente() {
+	    ModelAndView transportador = new ModelAndView("listaDocentes");
+	    transportador.addObject("listadoDocentes", docenteService.listarTodosDocentesActivos());
+	    return transportador;
+	}
+
+	
 	@PostMapping("/guardarDocente")
 	public ModelAndView guardarDocente(Docente docente) {
 		
@@ -48,7 +59,30 @@ public class DocenteController {
 		docenteService.guardarDocente(docente);
 		
 		ModelAndView transportador = new ModelAndView("listaDocentes");
-		transportador.addObject("listadoDocentes", docenteService.listarTodosDocente());
+		transportador.addObject("listadoDocentes", docenteService.listarTodosDocentesActivos());
+		//transportador.addObject("listadoDocentes", docenteService.listarTodosDocente());
 		return transportador;
+	}
+	
+	//eliminar
+	@GetMapping("/eliminarDocente/{dni}")
+	public ModelAndView deleteDocente(@PathVariable(name="dni") double dni) {
+		
+		docenteService.eliminarDocente(dni);
+		
+		ModelAndView modelView= new ModelAndView("listaDocentes");
+		modelView.addObject("listadoDocentes",docenteService.listarTodosDocentesActivos());
+		
+		return modelView;
+	}
+	//modificar
+	@GetMapping("/modificarDocente/{dni}")
+	public ModelAndView modificarDocente(@PathVariable(name="dni") double dni) {
+		//el parametro del constructor ModelAndView es una Vista HTML
+		ModelAndView modelView= new ModelAndView("indexDocente");
+		modelView.addObject("docente",docenteService.consultarDocente(dni));
+		
+		
+		return modelView;
 	}
 }

@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div class="container-fluid">
+	<div data-th-replace="~{layout/header :: header}"></div>
 		<table class="table table-striped-columns table-primary">
 			<tr>
 				<th>DNI</th>
@@ -20,8 +21,8 @@
 				<td data-th-text="${docente.apellido}"></td>
 				<td data-th-text="${docente.nombre}"></td>
 				
-				<td><a class="btn btn-danger">Borrar</a>
-				<a class="btn btn-success">Editar</a></td>
+				<td><a class="btn btn-danger" data-th-href="@{'/eliminarDocente/'+${docente.dni}}">Borrar</a>
+				<a class="btn btn-success" data-th-href="@{'/modificarDocente/'+${docente.dni}}">Editar</a></td>
 			</tr>	
 			</table>
 			</div>
