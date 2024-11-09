@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import  ar.edu.ies6.model.Materia;
 import ar.edu.ies6.Repository.MateriaRepository;
@@ -41,7 +42,23 @@ public class ControllerMateria {
 
     @GetMapping("/materias")
     public String listaMateria (Model model){
- model.addAttribute("materias", materiaRepository.findAll());
-        return "listaMateria";
+ model.addAttribute("materias", materiaRepository.findByEstadoTrue());
+        return "listaMaterias";
+    }
+
+
+    @PostMapping("/eliminarMateria/{codigo}")
+    public String eliminarMateria(@PathVariable Long codigo ){
+
+
+        Materia materia=materiaRepository.findById(codigo).orElse(null);
+
+            if(materia!=null){
+
+                materia.setEstado(false);
+                materiaRepository.save(materia);
+
+            }
+            return"redirect:/materias";
     }
 }

@@ -32,7 +32,7 @@ public class Materia {
     @Id 
     private Integer codigo ;
     @Column(name="estado")
-    private Boolean estado;
+    private Boolean estado=true;
 
 public Materia (){
 

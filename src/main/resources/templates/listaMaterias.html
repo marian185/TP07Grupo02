@@ -19,7 +19,7 @@
     </header>
     <main>
     <h1>lista de materia</h1>
-    <tablet border="1">
+    <table border="1">
 <thead>
 <tr>
 <th>nombre</th>
@@ -54,7 +54,9 @@
 <td th:text="${materia.codigo}"></td>
 <td>
    <button>modificar</button>
-<button>eliminar</button>
+   <form th:action="@{'/eliminarMateria/' + ${materia.codigo}}" method="post" style="display:inline;">
+    <button type="submit">Eliminar</button>
+</form>
 </td>
 </tr>
 
@@ -63,7 +65,7 @@
 </tbody>
 
 
-    </tablet>
+    </table>
     
 
     
